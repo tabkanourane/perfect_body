@@ -35,11 +35,11 @@ class _FullBodyState extends State<FullBody> {
           "Lose Weight",
           style: TextStyle(
             color: Colors.black,
-            fontSize: 20,
+            fontSize: 23,
             fontWeight: FontWeight.bold,
           ),
         ),
-        iconTheme: IconThemeData(color: Colors.green),
+        iconTheme: IconThemeData(color: Colors.teal, size: 30),
       ),
       drawer: NavigationDrawerWidget(),
       body: SafeArea(
@@ -78,7 +78,7 @@ class _FullBodyState extends State<FullBody> {
                       SizedBox(
                         height: 30,
                       ),
-                     Positioned(
+                      Positioned(
                         child: TextButton(
                           onPressed: () {
                             Navigator.push(
@@ -92,7 +92,7 @@ class _FullBodyState extends State<FullBody> {
                             margin: EdgeInsets.symmetric(horizontal: 40),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
-                                color: Colors.green),
+                                color: Colors.teal),
                             child: Center(
                               child: Text(
                                 'Day 1',
@@ -320,7 +320,7 @@ class _FullBodyState extends State<FullBody> {
                             margin: EdgeInsets.symmetric(horizontal: 40),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
-                                color: Colors.green),
+                                color: Colors.teal),
                             child: Center(
                               child: Text(
                                 'Drink',

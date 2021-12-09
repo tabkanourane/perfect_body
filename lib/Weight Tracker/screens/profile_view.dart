@@ -35,10 +35,10 @@ class ProfileView extends StatelessWidget {
           child: SizedBox(
             width: 120.0,
             child: RaisedButton(
-              color: Colors.green,
+              color: Colors.teal,
               child: const Text(
                 "Logout",
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.blueAccent),
               ),
               onPressed: vm.logout,
             ),

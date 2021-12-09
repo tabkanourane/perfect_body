@@ -14,6 +14,7 @@ class LineTitles {
       bottomTitles: SideTitles(
         showTitles: true,
         reservedSize: 30,
+        
         // getTextStyles: (_) => style,
         getTitles: (value) {
           value = value % 14;

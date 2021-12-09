@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:perfect_body/NavigationDrawer/RatePage.dart';
 import 'package:perfect_body/NavigationDrawer/UserPage.dart';
-import 'package:perfect_body/Weight%20Tracker/WeightPage.dart';
-
+import 'package:perfect_body/NavigationDrawer/WeightPage.dart';
+import 'package:perfect_body/WorkoutReminder/ReminderApp.dart';
+import 'package:perfect_body/burned_calories/screens/wrapper.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: 20);
@@ -15,7 +16,7 @@ class NavigationDrawerWidget extends StatelessWidget {
 
     return Drawer(
       child: Material(
-        color: Color.fromRGBO(50, 75, 205, 1),
+        color: Colors.white70,
         child: ListView(
           children: <Widget>[
             buildHeader(
@@ -37,8 +38,8 @@ class NavigationDrawerWidget extends StatelessWidget {
                   buildSearchField(),
                   const SizedBox(height: 24),
                   buildMenuItem(
-                    text: 'Weight Tracker',
-                    icon: Icons.people,
+                    text: 'profile',
+                    icon: Icons.people_outline,
                     onClicked: () => selectedItem(context, 0),
                   ),
                   const SizedBox(height: 16),
@@ -49,29 +50,35 @@ class NavigationDrawerWidget extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   buildMenuItem(
-                    text: 'Workflow',
-                    icon: Icons.workspaces_outline,
+                    text: 'Weight Progress',
+                    icon: Icons.monitor_weight_outlined,
                     onClicked: () => selectedItem(context, 2),
                   ),
                   const SizedBox(height: 16),
                   buildMenuItem(
-                    text: 'Updates',
-                    icon: Icons.update,
+                    text: 'Daily Burned Calories',
+                    icon: Icons.fireplace_outlined,
                     onClicked: () => selectedItem(context, 3),
                   ),
+                  const SizedBox(height: 16),
+                  buildMenuItem(
+                    text: 'Workout Reminder',
+                    icon: Icons.update,
+                    onClicked: () => selectedItem(context, 4),
+                  ),
                   const SizedBox(height: 24),
-                  Divider(color: Colors.white70),
+                  Divider(color: Colors.black),
                   const SizedBox(height: 24),
                   buildMenuItem(
                     text: 'Rate Us',
-                    icon: Icons.rate_review_sharp,
-                    onClicked: () => selectedItem(context, 4),
+                    icon: Icons.rate_review_outlined,
+                    onClicked: () => selectedItem(context, 5),
                   ),
                   const SizedBox(height: 16),
                   buildMenuItem(
                     text: 'Share with friends',
-                    icon: Icons.share,
-                    onClicked: () => selectedItem(context, 5),
+                    icon: Icons.share_outlined,
+                    onClicked: () => selectedItem(context, 6),
                   ),
                 ],
               ),
@@ -101,19 +108,27 @@ class NavigationDrawerWidget extends StatelessWidget {
                 children: [
                   Text(
                     name,
-                    style: TextStyle(fontSize: 20, color: Colors.white),
+                    style: TextStyle(
+                      fontSize: 23,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   const SizedBox(height: 4),
                   Text(
                     email,
-                    style: TextStyle(fontSize: 14, color: Colors.white),
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
               Spacer(),
               CircleAvatar(
                 radius: 24,
-                backgroundColor: Color.fromRGBO(30, 60, 168, 1),
+                backgroundColor: Colors.teal,
                 child: Icon(Icons.add_comment_outlined, color: Colors.white),
               )
             ],
@@ -122,7 +137,7 @@ class NavigationDrawerWidget extends StatelessWidget {
       );
 
   Widget buildSearchField() {
-    final color = Colors.white;
+    final color = Colors.black;
 
     return TextField(
       style: TextStyle(color: color),
@@ -132,7 +147,7 @@ class NavigationDrawerWidget extends StatelessWidget {
         hintStyle: TextStyle(color: color),
         prefixIcon: Icon(Icons.search, color: color),
         filled: true,
-        fillColor: Colors.white12,
+        fillColor: Colors.white,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(5),
           borderSide: BorderSide(color: color.withOpacity(0.7)),
@@ -150,13 +165,13 @@ class NavigationDrawerWidget extends StatelessWidget {
     IconData icon,
     VoidCallback onClicked,
   }) {
-    final color = Colors.white;
-    final hoverColor = Colors.white70;
+    final color = Colors.black;
+    final hoverColor = Colors.teal;
 
     return ListTile(
-      leading: Icon(icon, color: color),
-      title: Text(text, style: TextStyle(color: color)),
-      hoverColor: hoverColor,
+      leading: Icon(icon, color: hoverColor),
+      title: Text(text, style: TextStyle(color: color, fontSize: 15)),
+      // hoverColor: hoverColor,
       onTap: onClicked,
     );
   }
@@ -167,14 +182,24 @@ class NavigationDrawerWidget extends StatelessWidget {
     Navigator.of(context).pop();
 
     switch (index) {
-      case 4:
-        rate.showRatingAppDialog(context);
-
-        break;
-      case 0:
+      case 2:
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => WeightPage(),
         ));
+        break;
+      case 3:
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => Wrapper(),
+        ));
+        break;
+      case 4:
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => ReminderApp(),
+        ));
+        break;
+      case 5:
+        rate.showRatingAppDialog(context);
+
         break;
     }
   }

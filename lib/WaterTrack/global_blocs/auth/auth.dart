@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:perfect_body/WaterTrack/global_blocs/auth/base_auth.dart';
+import 'package:perfect_body/burned_calories/services/database.dart';
 
 class Auth implements BaseAuth {
   final _firebaseAuth = FirebaseAuth.instance;
@@ -15,6 +16,9 @@ class Auth implements BaseAuth {
   @override
   Future<String> signInAnonymously() async {
     final user = await _firebaseAuth.signInAnonymously();
+    DatabaseService databaseService = DatabaseService(uid: user.uid);
+    await databaseService.createNewUser(
+        "test user", true, "F", 1.6, 50, 18, 1.3, "lose");
     return user.uid;
   }
 

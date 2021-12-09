@@ -107,18 +107,6 @@ class WeightEntryDialogState extends State<WeightEntryDialog> {
                 ),
                 onTap: () => _showWeightPicker(context, viewModel),
               ),
-              ListTile(
-                leading: Icon(Icons.speaker_notes, color: Colors.grey[500]),
-                title: TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Optional note',
-                    ),
-                    controller: _textController,
-                    onChanged: (value) {
-                      viewModel
-                          .onEntryChanged(viewModel.weightEntry..note = value);
-                    }),
-              ),
             ],
           ),
         );

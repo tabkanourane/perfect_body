@@ -7,7 +7,6 @@ import 'package:perfect_body/Workouts/WorkoutPage/Fitness.dart';
 import 'package:perfect_body/Workouts/WorkoutPage/FullBody.dart';
 import 'package:perfect_body/Workouts/page/home_page_ButtLeg.dart';
 
-
 class ButtLeg extends StatefulWidget {
   @override
   _ButtLegState createState() => _ButtLegState();
@@ -36,11 +35,11 @@ class _ButtLegState extends State<ButtLeg> {
           "Lose Weight",
           style: TextStyle(
             color: Colors.black,
-            fontSize: 20,
+            fontSize: 23,
             fontWeight: FontWeight.bold,
           ),
         ),
-        iconTheme: IconThemeData(color: Colors.green),
+        iconTheme: IconThemeData(color: Colors.teal, size: 30),
       ),
       drawer: NavigationDrawerWidget(),
       body: SafeArea(
@@ -93,7 +92,7 @@ class _ButtLegState extends State<ButtLeg> {
                             margin: EdgeInsets.symmetric(horizontal: 40),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
-                                color: Colors.green),
+                                color: Colors.teal),
                             child: Center(
                               child: Text(
                                 'Day 1',
@@ -159,8 +158,7 @@ class _ButtLegState extends State<ButtLeg> {
               // Expanded(
               GridView.count(
                 shrinkWrap: true,
-                                physics: NeverScrollableScrollPhysics(),
-
+                physics: NeverScrollableScrollPhysics(),
                 crossAxisCount: 2,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
@@ -322,7 +320,7 @@ class _ButtLegState extends State<ButtLeg> {
                             margin: EdgeInsets.symmetric(horizontal: 40),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
-                                color: Colors.green),
+                                color: Colors.teal),
                             child: Center(
                               child: Text(
                                 'Drink',

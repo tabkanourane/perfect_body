@@ -6,7 +6,8 @@ import 'package:perfect_body/Workouts/widget/exercise_set_widget.dart';
 
 class ExercisesWidgetFullBody extends StatefulWidget {
   @override
-  _ExercisesWidgetFullBodyState createState() => _ExercisesWidgetFullBodyState();
+  _ExercisesWidgetFullBodyState createState() =>
+      _ExercisesWidgetFullBodyState();
 }
 
 class _ExercisesWidgetFullBodyState extends State<ExercisesWidgetFullBody> {

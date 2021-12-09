@@ -64,7 +64,7 @@ class ProgressChartDropdown extends StatelessWidget {
       padding: const EdgeInsets.only(right: 8.0, bottom: 15.0),
       child: Text(
         "Show entries from last",
-        style: TextStyle(color: Colors.grey[500]),
+        style: TextStyle(color: Colors.grey[700], fontSize: 14),
       ),
     );
   }

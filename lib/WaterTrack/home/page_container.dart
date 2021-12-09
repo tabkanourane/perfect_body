@@ -11,7 +11,6 @@ import 'package:perfect_body/Workouts/WorkoutPage/AbsArm.dart';
 import 'package:provider/provider.dart';
 import 'package:perfect_body/models/user.dart';
 
-
 class PageContainer extends StatefulWidget {
   const PageContainer({
     Key key,

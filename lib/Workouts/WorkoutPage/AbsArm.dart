@@ -34,11 +34,11 @@ class _AbsArmState extends State<AbsArm> {
           "Lose Weight",
           style: TextStyle(
             color: Colors.black,
-            fontSize: 20,
+            fontSize: 23,
             fontWeight: FontWeight.bold,
           ),
         ),
-        iconTheme: IconThemeData(color: Colors.green),
+        iconTheme: IconThemeData(color: Colors.teal, size: 30),
       ),
       drawer: NavigationDrawerWidget(),
       body: SafeArea(
@@ -91,7 +91,7 @@ class _AbsArmState extends State<AbsArm> {
                             margin: EdgeInsets.symmetric(horizontal: 40),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
-                                color: Colors.green),
+                                color: Colors.teal),
                             child: Center(
                               child: Text(
                                 'Day 1',
@@ -295,7 +295,104 @@ class _AbsArmState extends State<AbsArm> {
                             margin: EdgeInsets.symmetric(horizontal: 40),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
-                                color: Colors.green),
+                                color: Colors.teal),
+                            child: Center(
+                              child: Text(
+                                'Drink',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20),
+                              ),
+                            ),
+                          ),
+                        ),
+                        bottom: 20,
+                        left: 70,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                width: double.infinity,
+                height: 150,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Color.fromRGBO(149, 194, 222, 70),
+                ),
+                child: Container(
+                  child: Stack(
+                    children: <Widget>[
+                      Positioned(
+                        child: Column(
+                          children: [
+                            Text(
+                              "Water Tracker",
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 8,
+                            ),
+                            Text(
+                              "Water is the fuel of the \nmuscles",
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 15,
+                              ),
+                            ),
+                          ],
+                        ),
+                        top: 10,
+                        right: 60,
+                        width: MediaQuery.of(context).size.width,
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Positioned(
+                        child: Container(
+                          height: 80,
+                          width: 80,
+                          margin: EdgeInsets.symmetric(horizontal: 40),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            image: DecorationImage(
+                                image: AssetImage('assets/waterReminder.jpg'),
+                                fit: BoxFit.fill),
+                          ),
+                        ),
+                        left: 230,
+                        top: 10,
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Positioned(
+                        child: TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomePage()),
+                            );
+                          },
+                          child: Container(
+                            height: 40,
+                            width: 130,
+                            margin: EdgeInsets.symmetric(horizontal: 40),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                color: Colors.teal),
                             child: Center(
                               child: Text(
                                 'Drink',

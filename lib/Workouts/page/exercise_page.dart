@@ -30,8 +30,17 @@ class _ExercisePageState extends State<ExercisePage> {
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,
-          title: Text(currentExercise.name),
-          centerTitle: true,
+          title: Center(
+            child: Text(
+              currentExercise.name,
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+            ),
+          ),
+          // centerTitle: true,
           elevation: 0,
         ),
         extendBodyBehindAppBar: true,

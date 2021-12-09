@@ -42,13 +42,11 @@ class StatisticsPage extends StatelessWidget {
           }
         }
         List<WeightEntry> last7daysEntries = entries
-            .where((entry) =>
-            entry.dateTime
+            .where((entry) => entry.dateTime
                 .isAfter(DateTime.now().subtract(Duration(days: 7))))
             .toList();
         List<WeightEntry> last30daysEntries = entries
-            .where((entry) =>
-            entry.dateTime
+            .where((entry) => entry.dateTime
                 .isAfter(DateTime.now().subtract(Duration(days: 30))))
             .toList();
         return _StatisticsPageViewModel(
@@ -62,7 +60,7 @@ class StatisticsPage extends StatelessWidget {
           last30daysProgress: last30daysEntries.isEmpty
               ? 0.0
               : (last30daysEntries.first.weight -
-              last30daysEntries.last.weight),
+                  last30daysEntries.last.weight),
           entries: entries,
           unit: unit,
           openAddEntryDialog: () {
@@ -85,8 +83,7 @@ class StatisticsPage extends StatelessWidget {
               onTap: viewModel.openAddEntryDialog,
               child: _StatisticCardWrapper(
                 child: Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: ProgressChart()),
+                    padding: EdgeInsets.all(8.0), child: ProgressChart()),
                 height: 250.0,
               ),
             ),
@@ -159,11 +156,12 @@ class _StatisticCard extends StatelessWidget {
   final double textSizeFactor;
   final String unit;
 
-  const _StatisticCard({this.title,
-    this.value,
-    this.unit,
-    this.processNumberSymbol = false,
-    this.textSizeFactor = 1.0});
+  const _StatisticCard(
+      {this.title,
+      this.value,
+      this.unit,
+      this.processNumberSymbol = false,
+      this.textSizeFactor = 1.0});
 
   @override
   Widget build(BuildContext context) {
@@ -179,21 +177,27 @@ class _StatisticCard extends StatelessWidget {
                 Text(
                   numberSymbol + value.toStringAsFixed(1),
                   textScaleFactor: textSizeFactor,
-                  style: Theme
-                      .of(context)
+                  style: Theme.of(context)
                       .textTheme
                       .caption
-                      .copyWith(color: numberColor),
+                      .copyWith(color: numberColor, fontSize: 16, fontWeight: FontWeight.bold),
                 ),
                 Padding(
-                    padding: EdgeInsets.only(left: 5.0),
-                    child: Text(unit)),
+                  padding: EdgeInsets.only(left: 5.0),
+                  child: Text(
+                    unit,
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ),
               ],
               mainAxisAlignment: MainAxisAlignment.center,
             ),
           ),
           Padding(
-            child: Text(title),
+            child: Text(
+              title,
+              style: TextStyle(fontSize: 16, color: Colors.black),
+            ),
             padding: EdgeInsets.only(bottom: 8.0),
           ),
         ],

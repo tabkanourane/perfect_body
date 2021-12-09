@@ -9,7 +9,7 @@ import 'package:perfect_body/Weight%20Tracker/screens/main_page.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_analytics/observer.dart';
 
-class Weight extends StatelessWidget {
+class WeightPage extends StatelessWidget {
   final FirebaseAnalytics analytics = FirebaseAnalytics();
   final Store<ReduxState> store = Store<ReduxState>(reduce,
       initialState: ReduxState(
@@ -25,11 +25,13 @@ class Weight extends StatelessWidget {
   Widget build(BuildContext context) {
     store.dispatch(InitAction());
     return StoreProvider(
+      
       store: store,
       child: MaterialApp(
+        
         title: 'Weight Tracker',
         theme: ThemeData(
-          primarySwatch: Colors.green,
+          primarySwatch: Colors.teal,
         ),
         navigatorObservers: [
           FirebaseAnalyticsObserver(analytics: analytics),
